@@ -1,0 +1,22 @@
+{
+    "name": "php/wp-plugin",
+    "description": "inbo extention for wp",
+    "authors": [
+        {
+            "name": "mank",
+            "email": "mohammad.ank@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "src/classes",
+            "src/services"
+        ]
+    }
+}
