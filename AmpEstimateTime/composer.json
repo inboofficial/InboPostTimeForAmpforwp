@@ -16,7 +16,8 @@
         },
         "classmap": [
             "src/classes",
-            "src/services"
+            "src/services",
+            "src/repository"
         ]
     }
 }
