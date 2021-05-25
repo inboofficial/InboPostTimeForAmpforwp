@@ -30,6 +30,9 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
         switch ($icon_pack){
             case 'font-awesome':
                 echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
+                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+                        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+                        crossorigin="anonymous" referrerpolicy="no-referrer" />';
                 break;
             case 'google-icon':
                 echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
@@ -71,19 +74,8 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
             $post = $wp_query->post;
             $round_time = $this->get_inbo_estimated_time($post);
             $icon_type = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
-            $icon = '';
-            switch ($icon_type){
-                case 'font-awesome':
-                    $icon = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
-                    break;
-                case 'google-icon':
-                    $icon = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON);
-                    break;
-                case 'none': break;
-                default: //flat icon pack
-                    $icon = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON);
-                    break;
-            }
+            $icon = $this->get_icon_by_type($icon_type);
+
             $table = new InboTemplate($this->base_path . "view/estimator_template.php");
             $table->icon_type = $icon_type;
             $table->icon = $icon;
@@ -95,6 +87,20 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
             return $table;
         }
         return "";
+    }
+
+    private function get_icon_by_type($icon_type): string
+    {
+        switch ($icon_type){
+            case 'font-awesome':
+                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
+            case 'google-icon':
+                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON);
+            case 'none':
+                return '';
+            default: //flat icon pack
+                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON);
+        }
     }
 
     private function get_inbo_estimated_time($post): float

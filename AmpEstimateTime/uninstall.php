@@ -6,7 +6,7 @@
  */
 
 
-use ir_inbo_extension\repository\PostMetaRepository;
+use IrInboExtension\repository\PostMetaRepository;
 
 if (!defined('ABSPATH')) {
     header('HTTP/1.0 403 Forbidden');

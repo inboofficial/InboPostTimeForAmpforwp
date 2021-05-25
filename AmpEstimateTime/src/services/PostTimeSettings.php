@@ -117,7 +117,7 @@ class PostTimeSettings implements ServiceInterface
                     'class' => 'child_opt child_opt_arrow',
                     'title' => esc_html__('Icon Class', 'inbo-posts-time-for-amp'),
                     'tooltip-subtitle' => esc_html__('Enter Icon Pack Class Name Here, find classes here: flaticon.com/uicons', 'inbo-posts-time-for-amp'),
-                    'required' => array('inbo-icon-pack-name', '=', 'flat-icon'),
+                    'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'flat-icon'),
                     'default' => 'fi-rr-stopwatch',
                 ),
                 array(
@@ -126,7 +126,7 @@ class PostTimeSettings implements ServiceInterface
                     'class' => 'child_opt child_opt_arrow',
                     'title' => esc_html__('Icon Class', 'inbo-posts-time-for-amp'),
                     'tooltip-subtitle' => esc_html__('Enter Icon Pack Class Name, find classes here: fontawesome.com', 'inbo-posts-time-for-amp'),
-                    'required' => array('inbo-icon-pack-name', '=', 'font-awesome'),
+                    'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'font-awesome'),
                     'default' => 'far fa-clock',
                 ),
                 array(
@@ -135,7 +135,7 @@ class PostTimeSettings implements ServiceInterface
                     'class' => 'child_opt child_opt_arrow',
                     'title' => esc_html__('Icon Class', 'inbo-posts-time-for-amp'),
                     'tooltip-subtitle' => esc_html__('Enter Icon Name Here, find classes here: fonts.google.com/icons', 'inbo-posts-time-for-amp'),
-                    'required' => array('inbo-icon-pack-name', '=', 'google-icon'),
+                    'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'google-icon'),
                     'default' => 'timer',
                 ),
 
@@ -158,6 +158,7 @@ class PostTimeSettings implements ServiceInterface
     private function get_icon_default_style(): string
     {
         return <<<TEXT
+            position: static;
             display: inline-block;
             vertical-align: middle;
             padding-bottom: 2px;

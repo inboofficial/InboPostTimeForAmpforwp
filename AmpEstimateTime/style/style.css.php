@@ -18,12 +18,12 @@ div.et-ico {
     <? echo esc_html__($container_style) ?>
 }
 /*icon style*/
-span.inbo_estimator_icon {
+div.icon-container i {
 <? echo esc_html__($icon_style) ?>
 }
-/**/
-/*span.eti-ico:before {*/
-/*    content: "\f469";*/
-/*}*/
-/**/
+
+div.icon-container {
+    display: inline;
+    vertical-align: middle;
+}
 
