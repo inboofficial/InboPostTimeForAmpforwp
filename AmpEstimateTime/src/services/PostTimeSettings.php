@@ -20,6 +20,9 @@ class PostTimeSettings implements ServiceInterface
     public static $INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON = 'inbo-posts-time-icon-class-flat-icon';
     public static $INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME = 'inbo-posts-time-icon-class-font-awesome';
     public static $INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON = 'inbo-posts-time-icon-class-google-icon';
+    public static $INBO_POSTS_TIME_TEXT_TEMPLATE = 'inbo-posts-time-text-template';
+    public static $INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT = 'inbo-posts-time-in-less-then-one-minute-text';
+
 
     public function __construct($base_path)
     {
@@ -138,7 +141,30 @@ class PostTimeSettings implements ServiceInterface
                     'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'google-icon'),
                     'default' => 'timer',
                 ),
-
+                array(
+                    'id' => 'inbo-posts-time-text-settings',
+                    'type' => 'section',
+                    'title' => esc_html__('Icon Settings', 'inbo-posts-time-for-amp'),
+                    'indent' => true,
+                    'layout_type' => 'accordion',
+                    'accordion-open' => 1,
+                ),
+                array(
+                    'id' => self::$INBO_POSTS_TIME_TEXT_TEMPLATE,
+                    'type' => 'text',
+                    'class' => 'child_opt child_opt_arrow',
+                    'title' => esc_html__('Reading Time Text Template', 'inbo-posts-time-for-amp'),
+                    'tooltip-subtitle' => esc_html__('use $time to replace with calculated time', 'inbo-posts-time-for-amp'),
+                    'default' => 'Reading Time: $time Minutes',
+                ),
+                array(
+                    'id' => self::$INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT,
+                    'type' => 'text',
+                    'class' => 'child_opt child_opt_arrow',
+                    'title' => esc_html__('LessThenOne Minutes Text', 'inbo-posts-time-for-amp'),
+                    'tooltip-subtitle' => esc_html__('enter a text to show when calculated time is less then one minutes', 'inbo-posts-time-for-amp'),
+                    'default' => 'Less Then One Minutes',
+                ),
             )
         );
         return $sections;
