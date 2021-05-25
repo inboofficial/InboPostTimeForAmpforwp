@@ -6,7 +6,7 @@
  * @copyright           please_do_not_copy
  *
  * @wordpress-plugin
- * Plugin Name:         Inbo Post Time for AMP
+ * Plugin Name:         Inbo Post Time For ampforwp
  * Description:         estimate post time
  * Version:             0.8.0-beta
  * Requires at least:   5.2

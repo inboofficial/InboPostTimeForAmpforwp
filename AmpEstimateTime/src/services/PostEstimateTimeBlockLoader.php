@@ -20,31 +20,31 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
 
     function run()
     {
-        add_action('ampforwp_before_post_content', array( $this ,'inbo_estimator_amp_block_generator'));
+        add_action('ampforwp_before_post_content', array( $this ,'inbo_estimator_ampforwp_block_generator'));
         add_action('amp_post_template_css', array( $this ,'inbo_add_main_css'), 11);
         add_action('amp_post_template_head', array( $this ,'inbo_add_font_class'), 11);
     }
 
     function inbo_add_font_class(){
-        $icon_pack = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
+        $icon_pack = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
         switch ($icon_pack){
             case 'font-awesome':
-                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
-                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+                echo '<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
+                echo '<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
                         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
                         crossorigin="anonymous" referrerpolicy="no-referrer" />';
                 break;
             case 'google-icon':
-                echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+                echo '<link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
                 break;
             case 'none': break;
             default: //flat icon pack
-                echo "<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>";
+                echo "<link rel='preload' as='style' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>";
                 break;
         }
     }
 
-    function inbo_estimator_amp_block_generator()
+    function inbo_estimator_ampforwp_block_generator()
     {
         echo $this->get_estimator_block();
     }
@@ -55,9 +55,9 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
 
     function inbo_main_css_initialize($post_id): InboTemplate
     {
-        $inbo_color = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_COLOR)['color'];
-        $container_style = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ADVANCED_STYLE_CONTAINER);
-        $icon_style = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ADVANCED_STYLE_ICON);
+        $inbo_color = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_COLOR)['color'];
+        $container_style = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ADVANCED_STYLE_CONTAINER);
+        $icon_style = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ADVANCED_STYLE_ICON);
 
         $block = new InboTemplate($this->base_path . "style/style.css.php");
         $block->inbo_color = ($inbo_color==null || $inbo_color==="")?"deepskyblue":$inbo_color;
@@ -73,7 +73,7 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
         if ($wp_query && $wp_query->post) {
             $post = $wp_query->post;
             $round_time = $this->get_inbo_estimated_time($post);
-            $icon_type = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
+            $icon_type = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
             $icon = $this->get_icon_by_type($icon_type);
 
             $table = new InboTemplate($this->base_path . "view/estimator_template.php");
@@ -86,8 +86,8 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
     }
 
     private function get_reading_time_text($time){
-        if($time == 0) return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT);
-        $text_template = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_TEXT_TEMPLATE);
+        if($time == 0) return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT);
+        $text_template = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_TEXT_TEMPLATE);
         return str_replace("{time}",$time,$text_template);
     }
 
@@ -95,13 +95,13 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
     {
         switch ($icon_type){
             case 'font-awesome':
-                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
+                return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
             case 'google-icon':
-                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON);
+                return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON);
             case 'none':
                 return '';
             default: //flat icon pack
-                return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON);
+                return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON);
         }
     }
 
