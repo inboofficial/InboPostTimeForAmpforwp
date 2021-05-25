@@ -154,8 +154,8 @@ class PostTimeSettings implements ServiceInterface
                     'type' => 'text',
                     'class' => 'child_opt child_opt_arrow',
                     'title' => esc_html__('Reading Time Text Template', 'inbo-posts-time-for-amp'),
-                    'tooltip-subtitle' => esc_html__('use $time to replace with calculated time', 'inbo-posts-time-for-amp'),
-                    'default' => 'Reading Time: $time Minutes',
+                    'tooltip-subtitle' => esc_html__('use {time} to replace with calculated time', 'inbo-posts-time-for-amp'),
+                    'default' => 'Reading Time: {time} Minutes',
                 ),
                 array(
                     'id' => self::$INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT,
@@ -163,7 +163,7 @@ class PostTimeSettings implements ServiceInterface
                     'class' => 'child_opt child_opt_arrow',
                     'title' => esc_html__('LessThenOne Minutes Text', 'inbo-posts-time-for-amp'),
                     'tooltip-subtitle' => esc_html__('enter a text to show when calculated time is less then one minutes', 'inbo-posts-time-for-amp'),
-                    'default' => 'Less Then One Minutes',
+                    'default' => 'Reading Time: Less Then One Minutes',
                 ),
             )
         );
@@ -188,7 +188,7 @@ class PostTimeSettings implements ServiceInterface
             display: inline-block;
             vertical-align: middle;
             padding-bottom: 2px;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: white;
             padding-left: 0.5rem;
         TEXT;

@@ -79,14 +79,16 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
             $table = new InboTemplate($this->base_path . "view/estimator_template.php");
             $table->icon_type = $icon_type;
             $table->icon = $icon;
-            if ($round_time == 0) {
-                $table->miniute = "کم تر از 1 ";
-            } else {
-                $table->miniute = $round_time;
-            }
+            $table->reading_time = $this->get_reading_time_text($round_time);
             return $table;
         }
         return "";
+    }
+
+    private function get_reading_time_text($time){
+        if($time == 0) return PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT);
+        $text_template = PostTimeSettings::get_amp_settings(PostTimeSettings::$INBO_POSTS_TIME_TEXT_TEMPLATE);
+        return str_replace("{time}",$time,$text_template);
     }
 
     private function get_icon_by_type($icon_type): string

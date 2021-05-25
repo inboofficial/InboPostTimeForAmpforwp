@@ -10,7 +10,8 @@
 ?>
 
 
-<div class="et-ico"><span class="eti-ico hour-glass">
+<div class="et-ico">
+    <span class="eti-ico hour-glass">
         <? if ($icon_type == 'google-icon') { ?>
             <div class="icon-container">
                 <i class="material-icons"><? echo esc_html__($icon) ?> </i>
@@ -28,7 +29,6 @@
                 <i class="<? echo esc_html__($icon) ?>"></i>
             </div>
         <? } ?>
-       زمان مطالعه:
-        <? echo esc_html__($miniute); ?>
-        دقیقه</span></div>
+    <? echo $reading_time; ?>
+    </span></div>
 
