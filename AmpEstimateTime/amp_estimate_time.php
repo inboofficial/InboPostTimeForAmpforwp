@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:         Inbo Post Time for AMP
  * Description:         estimate post time
- * Version:             0.3.0-alpha
+ * Version:             0.6.0-alpha
  * Requires at least:   5.2
  * Requires PHP:        7.2
  * Author :             mohammad ali nasiri
@@ -36,7 +36,7 @@ function inbo_estimate_time_plugin_init()
     $plugin['url'] = plugin_dir_url(__FILE__);
     $plugin['version'] = '1.0.0';
     //add services
-    $plugin['PostTimeSettings'] = new PostTimeSettings();
+    $plugin['PostTimeSettings'] = new PostTimeSettings($plugin['path']);
     $plugin['PostTimeBlockLoader'] = new PostEstimateTimeBlockLoader($plugin['path']);
     //run
     $plugin->run();

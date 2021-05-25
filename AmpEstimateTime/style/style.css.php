@@ -9,30 +9,21 @@
 
 ?>
 
+/*main color setup*/
 :root {
     --inbo-color: <? echo esc_html__($inbo_color); ?>;
 }
+/*text style*/
 div.et-ico {
-    background-color: var(--inbo-color);
-    border-radius: 0.4rem;
-    text-align: center;
-    color: white;
+    <? echo esc_html__($container_style) ?>
 }
+/*icon style*/
 span.inbo_estimator_icon {
-    display: inline-block;
-    vertical-align: middle;
-    padding-bottom: 2px;
-    padding-left: 2px;
+<? echo esc_html__($icon_style) ?>
 }
-
-span.eti-ico:before {
-    content: "\f469";
-    font-family: "icomoon";
-    font-size: 1.5rem;
-    display: inline-block;
-    color: white;
-    vertical-align: middle;
-    padding-left: 0.5rem;
-}
-
+/**/
+/*span.eti-ico:before {*/
+/*    content: "\f469";*/
+/*}*/
+/**/
 
