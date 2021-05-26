@@ -12,12 +12,7 @@
 
 <div class="et-ico">
     <span class="eti-ico hour-glass">
-        <? if ($icon_type == 'google-icon') { ?>
-            <div class="icon-container">
-                <i class="material-icons"><? echo esc_html__($icon) ?> </i>
-            </div>
-            <?
-        } elseif ($icon_type == 'font-awesome') {
+        <? if ($icon_type == 'font-awesome') {
             ?>
             <div class="icon-container">
                 <i class="<? echo esc_html__($icon) ?>"></i>

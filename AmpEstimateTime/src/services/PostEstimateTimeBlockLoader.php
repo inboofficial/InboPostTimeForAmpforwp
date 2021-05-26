@@ -29,13 +29,12 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
         $icon_pack = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
         switch ($icon_pack){
             case 'font-awesome':
-                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
-                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                if(PostTimeSettings::get_ampforwp_settings('ampforwp_font_icon') != 'fontawesome-icons') {
+                    echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
+                    echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
                         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />';
-                break;
-            case 'google-icon':
-                echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+                }
                 break;
             case 'none': break;
             default: //flat icon pack
@@ -97,8 +96,6 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
         switch ($icon_type){
             case 'font-awesome':
                 return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
-            case 'google-icon':
-                return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON);
             case 'none':
                 return '';
             default: //flat icon pack

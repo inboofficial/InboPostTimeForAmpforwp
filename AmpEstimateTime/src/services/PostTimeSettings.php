@@ -19,7 +19,6 @@ class PostTimeSettings implements ServiceInterface
     public static $INBO_POSTS_TIME_ICON_PACK_NAME = 'inbo-posts-time-icon-pack-name';
     public static $INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON = 'inbo-posts-time-icon-class-flat-icon';
     public static $INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME = 'inbo-posts-time-icon-class-font-awesome';
-    public static $INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON = 'inbo-posts-time-icon-class-google-icon';
     public static $INBO_POSTS_TIME_TEXT_TEMPLATE = 'inbo-posts-time-text-template';
     public static $INBO_POSTS_TIME_IN_LESS_THEN_ONE_MINUTE_TEXT = 'inbo-posts-time-in-less-then-one-minute-text';
 
@@ -50,6 +49,8 @@ class PostTimeSettings implements ServiceInterface
             'id' => 'inbo-posts-time-settings',
             'subsection' => true,
             'fields' => array(
+
+                // styling
                 array(
                     'id' => 'inbo-posts-time-settings-accordion',
                     'type' => 'section',
@@ -96,6 +97,8 @@ class PostTimeSettings implements ServiceInterface
                     ),
                     'required' => array('inbo-posts-time-styling-level', '=', '1')
                 ),
+
+                // icon section
                 array(
                     'id' => 'inbo-posts-time-icon-settings',
                     'type' => 'section',
@@ -111,8 +114,7 @@ class PostTimeSettings implements ServiceInterface
                     'options' => array(
                         'none' => 'None',
                         'font-awesome' => 'Font-Awesome',
-                        'flat-icon' => 'Flat Icon',
-                        'google-icon' => 'Google Icons'
+                        'flat-icon' => 'Flat Icon'
                     ),
                     'default' => 'flat-icon',
                 ),
@@ -134,15 +136,8 @@ class PostTimeSettings implements ServiceInterface
                     'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'font-awesome'),
                     'default' => 'far fa-clock',
                 ),
-                array(
-                    'id' => self::$INBO_POSTS_TIME_ICON_CLASS_GOOGLE_ICON,
-                    'type' => 'text',
-                    'class' => 'child_opt child_opt_arrow',
-                    'title' => esc_html__('Icon Class', 'inbo-posts-time-for-ampforwp'),
-                    'tooltip-subtitle' => esc_html__('Enter Icon Name Here, find classes here: fonts.google.com/icons', 'inbo-posts-time-for-ampforwp'),
-                    'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'google-icon'),
-                    'default' => 'timer',
-                ),
+                // text section
+
                 array(
                     'id' => 'inbo-posts-time-text-settings',
                     'type' => 'section',
