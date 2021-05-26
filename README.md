@@ -11,15 +11,27 @@ to estimate and show the posts reading time
 
 ###installing snapshot version
 
-1. clone the plugin using: 
+####snapshot install dependency
+* [composer](https://getcomposer.org/download/) should be installed on your system
+
+####steps
+1. Run terminal and clone the plugin using: 
    ```console
    git clone https://github.com/inboofficial/InboPostTimeForAmpforwp
    ```
-2. Zip AmpEstimateTime folder
-3. In your website admin panel, go to Plugins -> 'add new' and click the ‘upload plugin’ button.
-3. Click 'Choose File' button in shown dialog and select the file in step one.
-4. Click 'install now' button and wait for wordpress to install the plugin.
-5. Congregates you have installed the inbo posts time for ampforwp plugin
+2. Go to InboPostTimeForAmpforwp directory
+   ```console
+   cd "InboPostTimeForAmpforwp/WPAMP Reading Time Calculator By Inbo"
+   ```
+3. Build the project   
+   ```console
+   coposer install -o
+   ```
+4. Zip 'WPAMP Reading Time Calculator By Inbo' folder
+5. In your website admin panel, go to Plugins -> 'add new' and click the ‘upload plugin’ button.
+6. Click 'Choose File' button in shown dialog and select the file in step one.
+7. Click 'install now' button and wait for wordpress to install the plugin.
+8. Congregates you have installed the inbo posts time for ampforwp plugin
 
 ###installing release version form wordpress repository
 

@@ -6,15 +6,28 @@
 
 ##وابستگی ها
 
-* پلاگین  [ampforwp](https://wordpress.org/plugins/accelerated-mobile-pages/) یاید از قبل نصب شده باشد
+* پلاگین  [ampforwp](https://wordpress.org/plugins/accelerated-mobile-pages/) باید از قبل نصب شده باشد
 
 ## نصب
 
 ###نصب نسخه اسنپ شات
 
-1. با استقاده از کد زیر کد برنامه را کلن کنید : 
+####نیازمندی های اسنپ شات
+* برنامه ی [composer](https://getcomposer.org/download/) باید در سیستم شما نصب شده باشد
+
+####مراحل
+
+1. ترمینال را اجرا کنید و با استقاده از کد زیر کد برنامه را کلن کنید : 
    ```console
    git clone https://github.com/inboofficial/InboPostTimeForAmpforwp
+   ```
+2. به پوشه ی پلاگین بروید
+   ```console
+   cd "InboPostTimeForAmpforwp/WPAMP Reading Time Calculator By Inbo"
+   ```
+3. پروژه را بسازید
+   ```console
+   coposer install -o
    ```
 2. پوشه ی AmpEstimateTime را با فرمت zip فشرده کنید
 3. در قسمت ادمین سایت وردپری به فسمت افزونه ها -> اضافه بروید و روی دکمه ی بارگذاری افزونه کلیک کنید

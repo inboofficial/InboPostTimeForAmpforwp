@@ -23,12 +23,10 @@ for more information you can contact with us at inbo.ir
 
 == Installation ==
 
-1. clone the plugin using: clone https://github.com/inboofficial/InboPostTimeForAmpforwp
-2. Zip AmpEstimateTime folder
-3. In your website admin panel, go to Plugins -> 'add new' and click the ‘upload plugin’ button.
-3. Click 'choose file' button in shown dialog and select the file in step one and click open button.
-4. Click 'install now' button and wait for wordpress to install the plugin.
-5. congregates you have installed the inbo posts time for ampforwp plugin
+1. In your website admin panel, go to Plugins -> 'add new'
+2. Search inbo post time in search bar to find the inbo plugin
+3. Click 'install now' button and wait for wordpress to install the plugin.
+4. Congregates you have installed the inbo posts time for ampforwp plugin
 
 == Copyright ==
 
