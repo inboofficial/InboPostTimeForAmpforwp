@@ -2,8 +2,6 @@
 /**
  *
  * @package             PluginPackage
- * @author              mohammad ali nassiri
- * @copyright           please_do_not_copy
  *
  */
 
