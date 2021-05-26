@@ -29,17 +29,17 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
         $icon_pack = PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_PACK_NAME);
         switch ($icon_pack){
             case 'font-awesome':
-                echo '<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
-                echo '<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-                        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
+                echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />';
                 break;
             case 'google-icon':
-                echo '<link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
+                echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
                 break;
             case 'none': break;
             default: //flat icon pack
-                echo "<link rel='preload' as='style' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>";
+                echo "<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>";
                 break;
         }
     }
@@ -50,6 +50,7 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
     }
 
     function inbo_add_main_css(){
+//        echo file_get_contents($this->base_path . "style/uicons-regular-rounded.css");
         echo $this->inbo_main_css_initialize(get_the_ID());
     }
 

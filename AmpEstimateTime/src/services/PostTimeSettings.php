@@ -70,7 +70,8 @@ class PostTimeSettings implements ServiceInterface
                 ),
                 array(
                     'id' => self::$INBO_POSTS_TIME_ADVANCED_STYLE_CONTAINER,
-                    'type' => 'textarea',
+                    'type' => 'ace_editor',
+                    'mode' => 'css',
                     'title' => esc_html__('Time estimate container style', 'inbo-posts-time-for-ampforwp'),
                     'tooltip-subtitle' => esc_html__('Enter Your Style For Estimator Container', 'inbo-posts-time-for-ampforwp'),
                     'required' => array('inbo-posts-time-styling-level', '=', '2'),
@@ -78,7 +79,8 @@ class PostTimeSettings implements ServiceInterface
                 ),
                 array(
                     'id' => self::$INBO_POSTS_TIME_ADVANCED_STYLE_ICON,
-                    'type' => 'textarea',
+                    'type' => 'ace_editor',
+                    'mode' => 'css',
                     'title' => esc_html__('Time estimate icon style', 'inbo-posts-time-for-ampforwp'),
                     'tooltip-subtitle' => esc_html__('Enter Your Style For Estimator icon', 'inbo-posts-time-for-ampforwp'),
                     'required' => array('inbo-posts-time-styling-level', '=', '2'),
@@ -172,26 +174,30 @@ class PostTimeSettings implements ServiceInterface
 
     private function get_body_default_style(): string
     {
-        return <<<TEXT
-            background-color: var(--inbo-color);
-            border-radius: 0.4rem;
-            text-align: center;
-            color: white;
-        TEXT;
+        return <<<CSS
+            div.et-ico{
+                background-color: var(--inbo-color);
+                border-radius: 0.4rem;
+                text-align: center;
+                color: white;
+            }
+        CSS;
 
     }
 
     private function get_icon_default_style(): string
     {
-        return <<<TEXT
-            position: static;
-            display: inline-block;
-            vertical-align: middle;
-            padding-bottom: 2px;
-            font-size: 1.2rem;
-            color: white;
-            padding-left: 0.5rem;
-        TEXT;
+        return <<<CSS
+            div.icon-container i{
+                position: static;
+                display: inline-block;
+                vertical-align: middle;
+                padding-bottom: 2px;
+                font-size: 1.2rem;
+                color: white;
+                padding-left: 0.5rem;
+            }
+        CSS;
 
     }
 

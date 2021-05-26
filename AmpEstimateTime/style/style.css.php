@@ -14,13 +14,10 @@
     --inbo-color: <? echo esc_html__($inbo_color); ?>;
 }
 /*text style*/
-div.et-ico {
-    <? echo esc_html__($container_style) ?>
-}
+<? echo esc_html__($container_style) ?>
+
 /*icon style*/
-div.icon-container i {
 <? echo esc_html__($icon_style) ?>
-}
 
 div.icon-container {
     display: inline;
