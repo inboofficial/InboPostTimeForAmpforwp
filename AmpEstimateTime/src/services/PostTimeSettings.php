@@ -205,7 +205,7 @@ class PostTimeSettings implements ServiceInterface
     private function get_default_custom_html() : string
     {
         return <<<HTML
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;width: 20px;height: 20px;vertical-align: middle;padding-bottom: 2px; xml:space="preserve"><g>
                 <g xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <g>

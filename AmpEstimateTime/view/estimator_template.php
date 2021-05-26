@@ -18,7 +18,11 @@
                 <i class="<? echo esc_html__($icon) ?>"></i>
             </div>
             <?
-        } elseif ($icon_type != 'none') {
+        } elseif ($icon_type == 'custom-element'){ ?>
+            <div class="icon-container">
+                <? echo $icon ?>
+            </div>
+        <?} elseif ($icon_type != 'none') {
             ?>
             <div class="icon-container">
                 <i class="<? echo esc_html__($icon) ?>"></i>

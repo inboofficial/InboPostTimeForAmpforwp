@@ -97,6 +97,8 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
                 return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FONT_AWESOME);
             case 'none':
                 return '';
+            case 'custom-element':
+                return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_HTML_ELEMENT);
             default: //flat icon pack
                 return PostTimeSettings::get_ampforwp_settings(PostTimeSettings::$INBO_POSTS_TIME_ICON_CLASS_FLAT_ICON);
         }
