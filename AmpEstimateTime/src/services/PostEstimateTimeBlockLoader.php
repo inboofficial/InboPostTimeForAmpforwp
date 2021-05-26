@@ -49,7 +49,6 @@ class PostEstimateTimeBlockLoader implements ServiceInterface{
     }
 
     function inbo_add_main_css(){
-//        echo file_get_contents($this->base_path . "style/uicons-regular-rounded.css");
         echo $this->inbo_main_css_initialize(get_the_ID());
     }
 

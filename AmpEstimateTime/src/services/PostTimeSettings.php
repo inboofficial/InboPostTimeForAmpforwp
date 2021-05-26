@@ -50,7 +50,6 @@ class PostTimeSettings implements ServiceInterface
             'subsection' => true,
             'fields' => array(
 
-                // styling
                 array(
                     'id' => 'inbo-posts-time-settings-accordion',
                     'type' => 'section',
@@ -98,7 +97,6 @@ class PostTimeSettings implements ServiceInterface
                     'required' => array('inbo-posts-time-styling-level', '=', '1')
                 ),
 
-                // icon section
                 array(
                     'id' => 'inbo-posts-time-icon-settings',
                     'type' => 'section',
@@ -114,7 +112,7 @@ class PostTimeSettings implements ServiceInterface
                     'options' => array(
                         'none' => 'None',
                         'font-awesome' => 'Font-Awesome',
-                        'flat-icon' => 'Flat Icon'
+                        'flat-icon' => 'Flat Icon',
                     ),
                     'default' => 'flat-icon',
                 ),
@@ -136,8 +134,6 @@ class PostTimeSettings implements ServiceInterface
                     'required' => array(self::$INBO_POSTS_TIME_ICON_PACK_NAME, '=', 'font-awesome'),
                     'default' => 'far fa-clock',
                 ),
-                // text section
-
                 array(
                     'id' => 'inbo-posts-time-text-settings',
                     'type' => 'section',
