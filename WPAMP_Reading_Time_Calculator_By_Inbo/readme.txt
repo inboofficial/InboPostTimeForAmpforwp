@@ -2,7 +2,7 @@
 Contributors: inbo.ir
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.5
-Version: 0.10.2-alpha
+Version: 1.0.0-snapshot
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 == Description ==
@@ -13,15 +13,15 @@ to estimate and show the posts reading time
 * Custom text templates
 * Custom icon html element
 * Font-awesome and Flat-icon uicons support
-* The GPL v3.0 or later license. 🙂 Use it to make something cool.
+* The GPL v3.0 or later license. 🙂
 
 for more information you can contact with us at inbo.ir
 
 == dependencies ==
 
-* The ampforwp plugin must be installed on your WordPress site
+* The ampforwp plugin must be installed on your WordPress site. see : https://wordpress.org/plugins/accelerated-mobile-pages/
 
-== Installation ==
+== Installation (coming soon 🙂) ==
 
 1. In your website admin panel, go to Plugins -> 'add new'
 2. Search inbo post time in search bar to find the inbo plugin

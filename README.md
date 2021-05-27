@@ -33,7 +33,7 @@ to estimate and show the posts reading time
 7. Click 'install now' button and wait for wordpress to install the plugin.
 8. Congregates you have installed the inbo posts time for ampforwp plugin
 
-###installing release version form wordpress repository
+###installing release version form wordpress repository(coming soon)
 
 
 1. In your website admin panel, go to Plugins -> 'add new'

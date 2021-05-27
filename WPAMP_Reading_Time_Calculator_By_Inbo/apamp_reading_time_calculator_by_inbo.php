@@ -5,7 +5,7 @@
  * @author              mohammad ali nassiri: mohammad.ank@outlook.com
  *
  * @wordpress-plugin
- * Plugin Name:         WPAMP Reading Time Calculator By Inbo
+ * Plugin Name:         WPAMP_Reading_Time_Calculator_By_Inbo
  * Description:         estimate post time
  * Version:             1.0.0-snapshot
  * Requires at least:   5.2
